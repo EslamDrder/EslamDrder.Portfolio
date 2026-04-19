@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eslam Drder | Portfolio</title>
+
+  <link rel="icon" type="image/png" href="logo_ED.png">
+  <link rel="apple-touch-icon" href="logo_app.png">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2f4f7c">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --primary:#2f4f7c;
+  --primary-dark:#243f66;
+  --bg:#23334f;
+  --card:#f4f6f9;
+  --text:#2b2b2b;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --radius:12px;
+  --shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  background: radial-gradient(1200px 600px at 20% 0%, #2a3e63 0%, #1f2f4a 60%, #1a2740 100%);
+  color:var(--text);
+}
+
+/* ===== HEADER (blur + overlay) ===== */
+.header{
+  width: calc(100% - 44px);
+  margin: 22px auto;
+}
+.header{
+  margin:22px;
+  border-radius:14px;
+  overflow:hidden;
+  position:relative;
+  background:
+    linear-gradient(rgba(24,44,74,.78),rgba(24,44,74,.78)),
+    url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+}
+.header::after{
+  content:"";
+  position:absolute; inset:0;
+}
+
+.header-inner{
+  position:relative;
+  padding:38px 44px;
+}
+
+.top-line{
+  height:1px;background:rgba(255,255,255,.35);
+  margin-bottom:22px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.vertical-line {
+    width: 2px;
+    height: 150px;
+    background: rgba(255,255,255,.35);
+}
+
+.header-row{
+  display:flex;align-items:center;gap:20px;
+}
+
+.logo {
+  width: 190px;
+  height: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.name h1{
+  font-size:42px;color:#eaf2ff;font-weight:700;letter-spacing:.5px;
+}
+.name p{
+  color:#cbd5e1;margin-top:6px;font-weight:400;
+}
+
+/* ===== GRID ===== */
+.container{
+  padding:0 22px 22px;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr); /* كل اتنين جنب بعض */
+  gap:18px;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px 18px 16px;
+  box-shadow:var(--shadow);
+  position:relative;
+}
+
+/* title bar */
+.title{
+  background:linear-gradient(180deg,var(--primary),var(--primary-dark));
+  color:#fff;
+  border-radius:8px;
+  padding:10px 12px;
+  font-weight:600;
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:14px;
+}
+.title i{opacity:.9}
+.title .line{
+  flex:1;height:1px;background:rgba(255,255,255,.35);margin-left:8px;border-radius:1px;
+}
+
+/* divider */
+.divider{height:1px;background:var(--line);margin:12px 0}
+
+/* ===== ABOUT ===== */
+.about p{line-height:1.7;color:#3a3a3a}
+
+/* ===== SKILLS ===== */
+.skill{margin-bottom:12px}
+.skill-head{
+  display:flex;justify-content:space-between;font-size:13px;color:#2f3a4a;margin-bottom:6px
+}
+.bar{
+  height:9px;background:#dfe3ea;border-radius:20px;overflow:hidden;
+}
+.bar span{
+  display:block;height:100%;
+  background:linear-gradient(90deg,#2f4f7c,#3b6aa6);
+  border-radius:20px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3);
+  width:0;
+}
+
+/* ===== PROJECT (laptop mockup) ===== */
+.laptop{
+  width:100%;
+  border-radius:12px;
+  padding:10px;
+}
+.laptop .screen{
+  border-radius:8px;
+  overflow:hidden;
+}
+.laptop img{width:100%;display:block}
+.laptop .base{
+  margin:8px auto 0;width:90%;
+  border-radius:0 0 12px 12px;
+}
+
+/* list bullets like image */
+.list{margin-top:10px}
+.list li{
+  margin:8px 0 0 0;
+  list-style:none;
+  position:relative;
+  padding-left:18px;
+  color:#3a3a3a;
+}
+.list li::before{
+  content:"";
+  position:absolute;left:0;top:8px;
+  width:6px;height:6px;border-radius:50%;
+  background:#2f4f7c;
+}
+
+/* ===== SMALL PROJECT BOX ===== */
+.small{
+  border:1px solid #e3e7ef;border-radius:10px;padding:10px;background:#fbfcff;
+}
+.small-head{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:8px
+}
+
+.badges {
+  display: inline-flex;
+  padding: 6px;
+  gap: 6px;
+}
+
+/* البادج */
+.badge {
+  position: relative;
+  padding: 8px 18px;
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+/* Hover راقي */
+.badge:hover {
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* لمعة خفيفة */
+.badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(0,0,0,0.08),
+    transparent
+  );
+  transform: skewX(-20deg);
+}
+
+/* تشغيل اللمعة */
+.badge:hover::before {
+  animation: shine 0.7s ease;
+}
+
+@keyframes shine {
+  100% {
+    left: 130%;
+  }
+}
+
+/* ===== EXPERIENCE / EDUCATION ===== */
+.meta b{display:block;margin-bottom:6px}
+.meta p{color:#4b5563;margin:2px 0}
+
+/* ===== CONTACT ===== */
+.contact{
+  display:flex;
+  justify-content:space-between;
+  gap:10px
+}
+.contact .left p{
+  margin:6px 0;color:#374151
+}
+.contact .left i{width:18px}
+
+.qr{
+  text-align:center
+}
+.qr img{
+  width:120px;background:#fff;padding:6px;border-radius:10px;
+  box-shadow:0 6px 15px rgba(0,0,0,.25)
+}
+.scan{
+  margin-top:6px;
+  background:linear-gradient(180deg,var(--primary),var(--primary-dark));
+  color:#fff;font-size:12px;padding:6px 8px;border-radius:6px
+}
+.profile-img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.download{
+  display:block;margin-top:8px;
+  text-decoration:none;text-align:center;
+  font-size:12px;color:#fff;
+  background:#1f8f6b;padding:6px;border-radius:6px
+}
+
+/* ===== ANIMATIONS ===== */
+.card{opacity:0;transform:translateY(25px);transition:.6s}
+.card.show{opacity:1;transform:translateY(0)}
+
+.custom-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  color: #2b2b2b;
+  font-size: 15px;
+}
+
+.custom-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00c896; /* لون العلامة */
+  font-weight: bold;
+}
+
+@media (max-width: 768px){
+  .container{
+    grid-template-columns: 1fr; /* كارت واحد تحت بعض */
+  }
+
+  .header-inner{
+    padding:25px 18px;
+    text-align:center;
+  }
+
+  .header-row{
+    flex-direction:column;
+  }
+
+  .name h1{
+    font-size:28px;
+  }
+
+  .logo{
+    width:140px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px){
+  .container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .name h1{
+    font-size:34px;
+  }
+}
+@media (min-width: 1440px){
+  .container{
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .header{
+    max-width: 1200px;
+  }
+}
+img{
+  max-width:100%;
+  height:auto;
+}
+
+.install-modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.install-box{
+  background: #fff;
+  width: 320px;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(0.8); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+
+.install-logo{
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.install-box h2{
+  margin: 10px 0 5px;
+  color:#2f4f7c;
+}
+
+.install-box p{
+  font-size: 14px;
+  color:#555;
+}
+
+.install-actions{
+  display:flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#installBtn{
+  background:#2f4f7c;
+  color:#fff;
+  border:none;
+  padding:10px 15px;
+  border-radius:8px;
+  cursor:pointer;
+  flex:1;
+  margin-right:8px;
+}
+
+#closeBtn{
+  background:#eee;
+  border:none;
+  padding:10px 15px;
+  border-radius:8px;
+  cursor:pointer;
+  flex:1;
+}
+.page-loader{
+  position: fixed;
+  inset: 0;
+  background: #23334f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader-box{
+  text-align: center;
+  color: #fff;
+}
+
+.loader-logo{
+  width: 80px;
+  margin-bottom: 15px;
+  animation: pulse 1.5s infinite;
+}
+
+.spinner{
+  width: 45px;
+  height: 45px;
+  border: 4px solid rgba(255,255,255,0.2);
+  border-top: 4px solid #ffffff;
+  border-radius: 50%;
+  margin: 15px auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin{
+  100%{transform: rotate(360deg);}
+}
+
+@keyframes pulse{
+  0%{transform: scale(1);}
+  50%{transform: scale(1.1);}
+  100%{transform: scale(1);}
+}
+
+.page-loader.hide{
+  opacity: 0;
+  visibility: hidden;
+}
+</style>
+</head>
+
+<body>
+<div id="pageLoader" class="page-loader">
+  <div class="loader-box">
+
+    <img src="logo_app.png" class="loader-logo">
+
+    <div class="spinner"></div>
+
+    <h3>Loading...</h3>
+    <p>Preparing your experience</p>
+
+  </div>
+</div>
+
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="top-line"></div>
+
+    <div class="header-row">
+      <div class="logo">
+  <img src="logo_ED.png" alt="Logo">
+</div>
+      <div class="container">
+    <div class="vertical-line"></div>
+</div>
+      <div class="name">
+        <h1>Eslam Drder</h1>
+        <div class="top-line"></div>
+        <p>Web Developer</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="installModal" class="install-modal">
+  <div class="install-box">
+    
+    <img src="logo_app.png" class="install-logo" alt="App Logo">
+
+    <h2>Install Our App</h2>
+    <p>Get the best experience by installing our app on your device.</p>
+
+    <div class="install-actions">
+      <button id="installBtn">Install</button>
+      <button id="closeBtn">Not now</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+let deferredPrompt;
+
+const modal = document.getElementById('installModal');
+const installBtn = document.getElementById('installBtn');
+const closeBtn = document.getElementById('closeBtn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  // إظهار النافذة بدل الزر
+  modal.style.display = 'flex';
+});
+
+installBtn.addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+
+  const { outcome } = await deferredPrompt.userChoice;
+
+  deferredPrompt = null;
+  modal.style.display = 'none';
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("pageLoader");
+
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 1200); // مدة التحميل (تقدر تزودها أو تقللها)
+});
+</script>
+<!-- CONTENT -->
+<div class="container">
+
+  <!-- ABOUT -->
+  <div class="card about">
+    <div class="title"><i class="fa-solid fa-user"></i> About Me <div class="line"></div></div>
+    <p>
+     About Me
+I am Eslam Ayman Mohamed Drder, a motivated technology specialist with strong expertise in IT systems and a growing focus on automotive programming. I am highly skilled in building dynamic, responsive, and secure web applications using PHP, MySQL, JavaScript, HTML5, and CSS3.
+
+I specialize in developing business-oriented systems such as e-commerce platforms, inventory management systems, booking systems, and automated dashboards.
+
+Alongside my technical background, I have strong real-world experience in accounting, sales coordination, and business operations, which gives me a deep understanding of how systems should support real business needs.
+
+I enjoy transforming complex ideas into efficient, scalable digital solutions with clean code and strong architecture.    <div class="divider"></div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="card">
+    <div class="title"><i class="fa-solid fa-chart-pie"></i> Skills <div class="line"></div></div>
+
+     <div class="skill">
+      <div class="skill-head"><span>Problem Solving & Decision Making</span><span>95%</span></div>
+      <div class="bar"><span data-w="95%"></span></div>
+    </div>
+
+        <div class="skill">
+      <div class="skill-head"><span>Database Systems Management</span><span>85%</span></div>
+      <div class="bar"><span data-w="85%"></span></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-head"><span>PHP & MySQL</span><span>90%</span></div>
+      <div class="bar"><span data-w="90%"></span></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-head"><span>JavaScript</span><span>85%</span></div>
+      <div class="bar"><span data-w="85%"></span></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-head"><span>HTML / CSS</span><span>80%</span></div>
+      <div class="bar"><span data-w="80%"></span></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-head"><span>Accounting & Inventory Management</span><span>75%</span></div>
+      <div class="bar"><span data-w="75%"></span></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-head"><span>E-commerce Operations</span><span>70%</span></div>
+      <div class="bar"><span data-w="70%"></span></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-head"><span>Quality Control Systems</span><span>80%</span></div>
+      <div class="bar"><span data-w="80%"></span></div>
+    </div>
+  </div>
+
+  <!-- PROJECT MAIN -->
+  <div class="card">
+    <div class="title"><i class="fa-solid fa-briefcase"></i> Projects <div class="line"></div></div>
+
+    <div class="laptop">
+      <div class="screen">
+        <img src="logo_project.png" alt="">
+      </div>
+      <div class="base"></div>
+    </div>
+
+    <ul class="list">
+      <li>A complete all-in-one automotive management system for a global car company, covering luxury car sales, rentals, modifications, booking and late rental management, towing services, and full financial transactions..</li>
+      <li>Technologies: PHP, MySQL, jQuery</li>
+      <li>Demo: www.carrentalsystem.com</li>
+    </ul>
+  </div>
+
+  <!-- PROJECT MAIN -->
+  <div class="card">
+    <div class="title"><i class="fa-solid fa-briefcase"></i> Projects <div class="line"></div></div>
+
+    <div class="laptop">
+      <div class="screen">
+        <img src="logo_projectdifnix.png" alt="">
+      </div>
+      <div class="base"></div>
+    </div>
+
+    <ul class="list">
+      <li>The Difnix system for managing accounts, sales, and users is a highly professional and distinguished system with cutting-edge technology..</li>
+      <li>Technologies: PHP, MySQL, jQuery</li>
+      <li>Demo: www.DifnixSystem.com</li>
+    </ul>
+  </div>
+
+  
+  <!-- EXPERIENCE -->
+  <div class="card">
+    <div class="title"><i class="fa-solid fa-graduation-cap"></i> Experience <div class="line"></div></div>
+
+    <div class="meta">
+      <b>Freelance work</b>
+      <p>Web Developer</p>
+      <p>From:"2020"</p>
+    </div>
+
+    <div class="divider"></div>
+    <ul class="custom-list">
+    <li>Developed and maintained web applications.</li>
+</ul>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="card">
+    <div class="title"><i class="fa-solid fa-graduation-cap"></i> Experience <div class="line"></div></div>
+
+
+    <div class="meta">
+      <b>Goodsmart Company.</b>
+      <p>Quality Control & Order Specialist</p>
+      <p>2018 - 2021</p>
+    </div>
+
+    <div class="divider"></div>
+  <ul class="custom-list">
+  <li>Checked product quality and order accuracy.</li>
+  <li>Ensured compliance with company standards.</li>
+</ul>
+  </div>
+
+
+  <!-- EXPERIENCE -->
+  <div class="card">
+    <div class="title"><i class="fa-solid fa-graduation-cap"></i> Experience <div class="line"></div></div>
+
+
+    <div class="meta">
+      <b>Bazooka Restaurant & Online Store.</b>
+      <p>Customer Service Representative</p>
+      <p>Year: " 2023 "</p>
+    </div>
+
+    <div class="divider"></div>
+  <ul class="custom-list">
+  <li>Handled customer orders and inquiries.</li>
+  <li>Provided multi-channel customer support.</li>
+  <li>Ensured high customer satisfaction.</li>
+</ul>
+  </div>
+
+    <!-- EXPERIENCE -->
+  <div class="card">
+    <div class="title"><i class="fa-solid fa-graduation-cap"></i> Experience <div class="line"></div></div>
+
+
+    <div class="meta">
+      <b>Import & Export Company.</b>
+      <p>Accountant & Sales Coordinator</p>
+      <p>2023 - 2026</p>
+    </div>
+
+    <div class="divider"></div>
+  <ul class="custom-list">
+  <li>Managed full-cycle accounting (sales, purchases, clients, suppliers).</li>
+  <li>Prepared financial reports and statements.</li>
+  <li>Supported sales and marketing strategies.</li>
+</ul>
+  </div>
+
+  <!-- SMALL PROJECT -->
+  <div class="card">
+    <div class="title"><i class="fa-solid fa-layer-group"></i> Projects <div class="line"></div></div>
+
+    <div class="small">
+      <div class="small-head">
+        <b>Website systems</b>
+  <div class="badges">
+  <span class="badge">Preview</span>
+  <span class="badge">Live</span>
+</div>
+      </div>
+
+      <ul class="list">
+        <li>Advanced Automated Business Management System.</li>
+        <li>5+ Professional Web Applications</li>
+        <li>Inventory & Sales Management Systems</li>
+        <li>Booking & Order Processing Systems</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="card">
+    <div class="title"><i class="fa-solid fa-graduation-cap"></i> Education <div class="line"></div></div>
+
+    <div class="meta">
+      <b>Higher Institute for Specific Studies, Egypt</b>
+      <p>Bachelor’s Degree in Management Information Systems (MIS)</p>
+      <p>Graduation Year: 2025</p>
+      <p>Grade: Excellent</p>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="card contact">
+    <div class="left">
+      <div class="title"><i class="fa-solid fa-phone"></i> Contact <div class="line"></div></div>
+     
+      <p><i class="fa-solid fa-phone"></i> Mobile:+20 155 514 5400</p>
+      <p><i class="fa-brands fa-whatsapp"></i> WhatsApp:+20 115 448 7081</p>
+      <p><i class="fa-solid fa-envelope"></i> Email: EslamDrder.eg@gmail.com</p>
+      <p><i class="fa-solid fa-location-dot"></i>Location: Giza, Egypt</p>
+    </div>
+
+<div class="profile-img">
+  <img src="5998c6e2-bfac-4846-94ea-41d357afcc7f.jfif" alt="Eslam Drder">
+</div>
+
+<div class="qr">
+  <img src="qr_whatesapp.jpeg" alt="QR Code">
+  <div class="scan">Scan Me</div>
+  <a href="CV_ED.pdf" download class="download">Download CV</a>
+</div>
+
+</div>
+<!-- LANGUAGES -->
+<div class="card">
+  <div class="title">
+    <i class="fa-solid fa-language"></i> Languages
+    <div class="line"></div>
+  </div>
+
+  <div class="meta">
+    <p><b>Arabic:</b> Native Language</p>
+    <p><b>English:</b> Good</p>
+  </div>
+
+
+<script>
+/* scroll animation */
+const cards=document.querySelectorAll('.card');
+window.addEventListener('scroll',()=>{
+  cards.forEach(c=>{
+    if(c.getBoundingClientRect().top < window.innerHeight-40){
+      c.classList.add('show');
+    }
+  });
+});
+
+/* skill bars animation */
+setTimeout(()=>{
+  document.querySelectorAll('.bar span').forEach(b=>{
+    b.style.width=b.dataset.w;
+  });
+},500);
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(() => console.log("Service Worker Registered"));
+}
+</script>
+
+</body>
+</html>
