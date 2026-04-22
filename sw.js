@@ -4,7 +4,7 @@ const BASE_PATH = '/Portfolio.Eslam-Drder/';
 const ASSETS = [
   BASE_PATH,
   BASE_PATH + 'index.html',
-  BASE_PATH + 'logo_app.png',
+  BASE_PATH + 'logo_app.jpeg',
   BASE_PATH + 'manifest.json',
   BASE_PATH + 'style.css'
 ];
