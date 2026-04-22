@@ -1,7 +1,8 @@
 {
   "name": "Eslam Drder Portfolio",
   "short_name": "Eslam",
-  "start_url": "/Portfolio.Eslam-Drder/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#23334f",
   "theme_color": "#2f4f7c",
