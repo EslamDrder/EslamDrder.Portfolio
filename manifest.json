@@ -3,17 +3,17 @@
   "short_name": "Eslam",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "transport",
+  "background_color": "#23334f",
   "theme_color": "#2f4f7c",
   "icons": [
   {
     "src": "logo_app.png",
-    "sizes": "249x249",
+    "sizes": "199x199",
     "type": "image/png"
   },
   {
     "src": "logo_app.png",
-    "sizes": "612x612",
+    "sizes": "512x512",
     "type": "image/png",
     "purpose": "maskable"
   }
