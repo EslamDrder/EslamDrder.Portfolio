@@ -1,11 +1,10 @@
 {
   "name": "Eslam Drder Portfolio",
   "short_name": "Eslam",
-  "start_url": "/EslamDrder.Portfolio/",
-  "scope": "/EslamDrder.Portfolio/",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#23334f",
-  "theme_color": "#2f4f7c",
+  "background_color": "transparent",
+  "theme_color": "#000000",
   "icons": [
     {
       "src": "logo_app.png",
@@ -15,8 +14,7 @@
     {
       "src": "logo_app.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
+      "type": "image/png"
     }
   ]
 }
