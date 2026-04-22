@@ -1,5 +1,5 @@
-const CACHE_NAME = 'eslam-app-v2';
-const BASE_PATH = '/Portfolio.Eslam-Drder/';
+const CACHE_NAME = 'eslam-app-v3';
+const BASE_PATH = './';
 
 const ASSETS = [
   BASE_PATH,
@@ -14,7 +14,14 @@ self.addEventListener('install', event => {
   self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(ASSETS);
+      return Promise.all(
+        ASSETS.map(url =>
+          fetch(url).then(res => {
+            if (!res.ok) return;
+            return cache.put(url, res);
+          }).catch(() => {})
+        )
+      );
     })
   );
 });
@@ -25,9 +32,7 @@ self.addEventListener('activate', event => {
     caches.keys().then(keys =>
       Promise.all(
         keys.map(key => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
+          if (key !== CACHE_NAME) return caches.delete(key);
         })
       )
     )
@@ -41,25 +46,12 @@ self.addEventListener('fetch', event => {
 
   event.respondWith(
     caches.match(event.request).then(cached => {
-      if (cached) return cached;
-
-      return fetch(event.request)
-        .then(response => {
-          // خزن بس لو response سليم
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
-
-          const responseClone = response.clone();
-          caches.open(CACHE_NAME).then(cache => {
-            cache.put(event.request, responseClone);
-          });
-
-          return response;
-        })
-        .catch(() => {
-          return caches.match(BASE_PATH + 'index.html');
-        });
+      return (
+        cached ||
+        fetch(event.request).catch(() =>
+          caches.match('./index.html')
+        )
+      );
     })
   );
 });
