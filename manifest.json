@@ -3,8 +3,8 @@
   "short_name": "Eslam",
   "start_url": "/Portfolio.Eslam-Drder/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#23334f",
+  "theme_color": "#2f4f7c",
   "icons": [
     {
       "src": "logo_app.png",
@@ -12,10 +12,10 @@
       "type": "image/png"
     },
     {
-      "src": "logo_big.png",
+      "src": "logo_app.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ]
 }
